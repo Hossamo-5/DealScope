@@ -1,0 +1,23 @@
+
+OK main.py
+OK config/settings.py
+OK db/models.py
+OK db/crud.py
+OK admin/dashboard.py
+OK auth/security.py
+OK core/monitor.py
+OK core/connectors/amazon.py
+OK core/connectors/generic.py
+OK core/connectors/ai_scraper.py
+OK bot/handlers/user.py
+OK bot/handlers/user2.py
+OK bot/handlers/admin.py
+OK bot/keyboards/main.py
+OK bot/middleware/throttle.py
+OK bot/middleware/activity_tracker.py
+ERR utils/bot_registry.py
+[Errno 2] No such file or directory: 'utils/bot_registry.py'
+OK utils/url_validator.py
+OK scripts/create_admin.py
+OK scripts/seed_menu.py
+OK scripts/update_guide.py

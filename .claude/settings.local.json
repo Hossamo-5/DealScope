@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python dealscope/main.py)",
+      "Bash(dir:*)",
+      "Bash(ren store_monitor_bot dealscope)",
+      "Bash(powershell -Command \"Rename-Item -Path 'C:\\\\Users\\\\Hossa\\\\Downloads\\\\store_monitor_bot' -NewName 'dealscope'\")"
+    ]
+  }
+}

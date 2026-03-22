@@ -1,0 +1,25 @@
+Total DB tables: 22
+  OK admin_notifications
+  OK admin_users
+  OK audit_logs
+  OK bot_menu_buttons
+  OK bot_settings
+  OK opportunities
+  OK price_history
+  OK products
+  OK stock_history
+  OK stores
+  OK store_requests
+  OK support_messages
+  OK support_tickets
+  OK team_members
+  OK telegram_groups
+  OK users
+  OK user_activities
+  OK user_categories
+  OK user_products
+  OK user_sessions
+  OK user_stats
+  OK user_stores
+MISSING TABLES:
+  MISS telegram_bots

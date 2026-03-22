@@ -1,0 +1,35 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.3, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\Hossa\Downloads\store_monitor_bot\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Hossa\Downloads\store_monitor_bot\store_monitor_bot
+configfile: pytest.ini
+plugins: anyio-4.12.1, asyncio-1.3.0, base-url-2.1.0, cov-7.0.0, mock-3.15.1, playwright-0.7.2
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 24 items
+
+tests/test_comprehensive.py::TestDashboardAPI::test_health_endpoint_structure PASSED [  4%]
+tests/test_comprehensive.py::TestDashboardAPI::test_all_api_endpoints_require_auth PASSED [  8%]
+tests/test_comprehensive.py::TestDashboardAPI::test_dashboard_serves_vue_html PASSED [ 12%]
+tests/test_comprehensive.py::TestDashboardAPI::test_login_missing_password_returns_422 PASSED [ 16%]
+tests/test_comprehensive.py::TestDashboardAPI::test_login_no_identifier_returns_error PASSED [ 20%]
+tests/test_comprehensive.py::TestDashboardAPI::test_login_wrong_credentials_returns_401 PASSED [ 25%]
+tests/test_comprehensive.py::TestScraperLogic::test_amazon_connector_handles_amazon_urls PASSED [ 29%]
+tests/test_comprehensive.py::TestScraperLogic::test_amazon_connector_rejects_non_amazon PASSED [ 33%]
+tests/test_comprehensive.py::TestScraperLogic::test_amazon_asin_extraction PASSED [ 37%]
+tests/test_comprehensive.py::TestScraperLogic::test_shopify_connector_handles_shopify PASSED [ 41%]
+tests/test_comprehensive.py::TestScraperLogic::test_ai_scraper_clean_html PASSED [ 45%]
+tests/test_comprehensive.py::TestScraperLogic::test_ai_scraper_validate_price_conversion PASSED [ 50%]
+tests/test_comprehensive.py::TestMonitoringEngine::test_opportunity_scorer_high_score PASSED [ 54%]
+tests/test_comprehensive.py::TestMonitoringEngine::test_opportunity_scorer_max_100 PASSED [ 58%]
+tests/test_comprehensive.py::TestSettings::test_plan_limits_structure PASSED [ 62%]
+tests/test_comprehensive.py::TestSettings::test_score_weights_sum_100 PASSED [ 66%]
+tests/test_comprehensive.py::TestSecurity::test_url_validator_blocks_private_ips PASSED [ 70%]
+tests/test_comprehensive.py::TestSecurity::test_bot_registry_get_set PASSED [ 75%]
+tests/test_comprehensive.py::TestDBCRUD::test_get_or_create_user_new PASSED [ 79%]
+tests/test_comprehensive.py::TestBotFormatting::test_format_product_message_complete PASSED [ 83%]
+tests/test_comprehensive.py::TestSupportSystem::test_support_endpoints_require_auth PASSED [ 87%]
+tests/test_comprehensive.py::TestTelegramResolver::test_resolve_requires_auth PASSED [ 91%]
+tests/test_comprehensive.py::TestMenuBuilder::test_menu_endpoints_exist PASSED [ 95%]
+tests/test_comprehensive.py::TestMenuBuilder::test_menu_requires_auth PASSED [100%]
+
+============================= 24 passed in 3.20s ==============================

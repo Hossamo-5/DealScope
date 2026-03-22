@@ -1,0 +1,2 @@
+Total discovered routes: 54
+All 67 endpoints present OK

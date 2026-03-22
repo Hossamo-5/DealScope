@@ -1,0 +1,16 @@
+OK main
+OK config.settings
+OK db.models
+OK db.crud
+OK admin.dashboard
+OK auth.security
+OK core.monitor
+OK core.connectors.amazon
+OK core.connectors.generic
+OK core.connectors.ai_scraper
+OK bot.handlers.user
+OK bot.handlers.user2
+OK bot.handlers.admin
+OK bot.keyboards.main
+ERR utils.bot_registry: No module named 'utils.bot_registry'
+OK utils.url_validator

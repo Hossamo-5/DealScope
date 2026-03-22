@@ -1,0 +1,7 @@
+bot/handlers/user.py: 0 commands, 2 text handlers
+bot/handlers/user2.py: 0 commands, 9 text handlers
+bot/handlers/admin.py: 5 commands, 0 text handlers
+All 11 text handlers OK
+MISSING CALLBACKS:
+  MISS add_product
+  MISS admin_users

@@ -1,0 +1,18 @@
+Existing routes:
+  /login
+  /
+  opportunities
+  users
+  users/:telegram_id
+  support/:ticketId?
+  support/team
+  stores
+  store-requests
+  menu-builder
+  id-resolver
+  groups
+  bots
+  notifications
+  settings
+  health
+All required routes present

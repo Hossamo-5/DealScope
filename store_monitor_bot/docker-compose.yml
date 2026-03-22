@@ -1,0 +1,73 @@
+# ======================================================
+# Docker Compose - تشغيل المشروع بأمر واحد
+# ======================================================
+# تشغيل: docker-compose up -d
+# إيقاف: docker-compose down
+# اللوغ: docker-compose logs -f bot
+
+version: '3.8'
+
+services:
+
+  # ======================================================
+  # قاعدة البيانات PostgreSQL
+  # ======================================================
+  postgres:
+    image: postgres:15-alpine
+    container_name: store_monitor_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD environment variable is required}
+      POSTGRES_DB: store_monitor
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ======================================================
+  # Redis (للـ FSM Storage والـ Cache)
+  # ======================================================
+  redis:
+    image: redis:7-alpine
+    container_name: store_monitor_redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  # ======================================================
+  # البوت الرئيسي
+  # ======================================================
+  bot:
+    build: .
+    container_name: store_monitor_bot
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://postgres:${DB_PASSWORD:?DB_PASSWORD required}@postgres:5432/store_monitor
+      REDIS_URL: redis://redis:6379/0
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./logs:/app/logs
+    command: python main.py
+
+volumes:
+  postgres_data:
+  redis_data:

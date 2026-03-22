@@ -1,0 +1,29 @@
+DATABASE_URL=sqlite:///store_monitor.db
+ASYNC_URL=sqlite+aiosqlite:///store_monitor.db
+support_tickets: 0 rows
+support_messages: 0 rows
+All DB tables:
+  admin_notifications
+  admin_users
+  alembic_version
+  audit_logs
+  bot_menu_buttons
+  bot_settings
+  opportunities
+  price_history
+  products
+  stock_history
+  store_requests
+  stores
+  support_messages
+  support_tickets
+  team_members
+  telegram_bots
+  telegram_groups
+  user_activities
+  user_categories
+  user_products
+  user_sessions
+  user_stats
+  user_stores
+  users

@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    direction: rtl;
+  }
+  body {
+    font-family: 'Cairo', sans-serif;
+  }
+}
+
+@layer components {
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.15s ease;
+  }
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
+
+  .slide-up-enter-active {
+    transition: all 0.25s ease-out;
+  }
+  .slide-up-leave-active {
+    transition: all 0.2s ease-in;
+  }
+  .slide-up-enter-from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  .slide-up-leave-to {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  .sidebar-transition {
+    transition: width 0.2s ease;
+  }
+
+  .skeleton {
+    @apply animate-pulse bg-gray-200 dark:bg-gray-700 rounded;
+  }
+
+  /* Dark mode native select */
+  .dark select,
+  .dark select option {
+    background-color: #1e293b !important;
+    color: #f1f5f9 !important;
+    border-color: #334155 !important;
+  }
+
+  /* Dark mode custom dropdowns */
+  .dark .dropdown-menu,
+  .dark [role="listbox"],
+  .dark [role="option"] {
+    background-color: #1e293b !important;
+    color: #f1f5f9 !important;
+    border-color: #334155 !important;
+  }
+
+  .dark [role="option"]:hover,
+  .dark select option:hover {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+  }
+
+  .dark input[type="date"] {
+    background-color: #1e293b;
+    color: #f1f5f9;
+    border-color: #334155;
+  }
+
+  input[type="range"] {
+    accent-color: #2563eb;
+  }
+
+  .dark input[type="range"] {
+    accent-color: #3b82f6;
+  }
+}

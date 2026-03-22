@@ -1,0 +1,6 @@
+Python files: 72
+Vue/JS/TS files in dashboard-vue: 70
+Test files: 25
+API endpoints (decorators count): 59
+Bot handlers (router decorators): 75
+DB tables (__tablename__ count): 22
